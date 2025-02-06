@@ -1,6 +1,6 @@
 {
-    "name": "app_git_hub",
-    "short_name": "app_git_hub",
+    "name": "aba_project",
+    "short_name": "aba_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

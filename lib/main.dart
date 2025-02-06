@@ -1,125 +1,265 @@
+import 'package:aba_project/QR_Code/my_KHQR.dart';
+import 'package:aba_project/fav_payment.dart';
+import 'package:aba_project/fav_transfer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'app_drawer.dart';
+import 'grid.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page Zin ha'),
+      debugShowCheckedModeBanner: false,
+      title: 'ABA Mobile',
+      // theme: ThemeData(
+      //   canvasColor: const Color(0xff002739),
+      //   brightness: Brightness.dark,
+      // ),
+      home: MyHomePage(key: UniqueKey(), title: 'ABA\' Mobile'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  const MyHomePage({required Key key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+      backgroundColor: const Color(0xff255b81),
+      drawer: const Drawer(
+        // child: DrawerWidget(),
+        child: AppDrawer(),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Row(
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              'ABA',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              '\' ',
+              style: TextStyle(
+                  color: Color(0xFFFF0000),
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w900),
             ),
+            // Text(
+            //   'Mobile',
+            //   style: TextStyle(color: Colors.white),
+            // ),
           ],
         ),
+        backgroundColor: const Color(0xff255b81),
+        actions: <Widget>[
+          SvgPicture.asset("images/message.svg", width: 25),
+          const SizedBox(
+            width: 10,
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.notifications_none,
+              size: 25,
+            ),
+            tooltip: 'Air it',
+            onPressed: () {},
+          ),
+          Padding(
+            padding: const EdgeInsets.all(13.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) {
+                    return const MyKhqrApp();
+                  }),
+                );
+              },
+              child: Container(
+                width: 25.0,
+                height: 25.0,
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset.zero,
+                      // blurRadius: 0.0,
+                      spreadRadius: 2.0,
+                      blurStyle: BlurStyle.normal,
+                    ),
+                  ],
+                  color: Color(0xff7c94b6),
+                  image: DecorationImage(
+                    image: AssetImage('images/khQr.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  // border: Border.all(
+                  //   color: Colors.white,
+                  //   width: 2.0,
+                  // ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ListView(
+        // physics: const BouncingScrollPhysics(),
+        children: <Widget>[
+          // Non-scrollable section
+          Container(
+            width: double.infinity,
+            color: Colors.white,
+            child: const MenuGrid(),
+          ),
+          // Scrollable sections
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) {
+                  return const FavTransfer();
+                }),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.only(left: 40),
+              width: double.infinity,
+              color: const Color(0xff54b8d0),
+              height: 200,
+              child: const Stack(
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'គំរូផ្ទេរប្រាក់ប្រចាំ',
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.white,
+                          fontFamily: "Siemreap",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'ចូលប្រើគំរូរបស់អ្នកត្រង់នេះ ដើម្បីផ្ទេរប្រាក់បានលឿន',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Siemreap",
+                        ),
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    right: -50,
+                    top: 50,
+                    child: SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: Image(
+                        color: Colors.white30,
+                        image: AssetImage('images/Transfer.png'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) {
+                  return const fav_payment();
+                }),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.only(left: 40),
+              width: double.infinity,
+              height: 200,
+              color: const Color(0xffdd5e57),
+              child: const Stack(
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'គំរូទូទាត់ប្រចាំ',
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.white,
+                          fontFamily: "Siemreap",
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'បង្កើតគំរូដើម្បីងាយស្រួលនិងរហ័សក្នុងការទូទាត់ប្រាក់',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: "Siemreap",
+                        ),
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    right: -50,
+                    top: 50,
+                    child: SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: Image(
+                        color: Colors.white30,
+                        image: AssetImage('images/Payment.png'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.production_quantity_limits),
+      //       label: 'Product',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person),
+      //       label: 'About US',
+      //     ),
+      //   ],
+      //   selectedItemColor: Colors.blueAccent,
+      //   unselectedItemColor: Colors.grey,
+      //   onTap: (index) {
+      //     // Handle navigation or functionality here
+      //   },
+      // ),
     );
   }
 }

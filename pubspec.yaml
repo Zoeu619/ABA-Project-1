@@ -1,8 +1,8 @@
-name: app_git_hub
+name: aba_project
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,10 +31,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.17
+  lottie: ^3.2.0
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
@@ -46,22 +48,93 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  wheel_slider: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - images/Account.png
+    - images/Card.png
+    - images/Cash.png
+    - images/Document.png
+    - images/Grid.png
+    - images/Grid2.png
+    - images/Loan.png
+    - images/Payment.png
+    - images/QR_Code.png
+    - images/Transfer.png
+    - images/soeu.JPG
+    - images/message.svg
+    - image_drawer/add_friend.png
+    - image_drawer/book.png
+    - image_drawer/date_time.png
+    - image_drawer/angpao.png
+    - image_drawer/institution.png
+    - image_drawer/map.png
+    - image_drawer/rate.png
+    - image_drawer/setting.png
+    - image_drawer/money.png
+    - images/add_friend.png
+    - images/footer_mastercard.png
+    - images/Mobile Legends.jpg
+    - images/business.png
+    - images/Card_Emulator.png
+    - images/Payment2.png
+    - images/setMoney.png
+    - images/Junior.png
+    - images/Transfer2.png
+    - images/driver.png
+    - images/Edc.png
+    - images/water.jpg
+    - images/NSSF.png
+    - images/bookmark.png
+    - images/phone.png
+    - images/waterandwash.png
+    - images/bank.png
+    - images/wifi.png
+    - Svg_Image/save.svg
+    - images/khQr.png
+    - images/dollar_QR.png
+    - images/khmer_QR.png
+    - images/save 1.png
+    - images/screenshot.png
+    - images/link.png
+    - images/home.png
+    - images/umbrella.png
+    - images/own_acc.png
+    - images/transfer1.png
+    - images/Ecash.png
+    - images/wallet.png
+    - images/earth.png
+    - images/movie.png
+    - images/metfone.png
+    - images/VET.png
+    - images/bookmebus.png
+    - images/Cambolink21.png
+    - images/Starbuck.png
+    - images/vira.png
+    - images/redbus.png
+    - images/sosoro.png
+    - images/movie2per.png
+    - images/save.png
+    - images/pin.png
+    - images/smart.png
+    - images/aboutUS.png
+    - images/chhorng.png
+    - images/malorn.png
+    - images/sovannareach.png
+    # - images/
+    # - images/
+    # - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -74,11 +147,27 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: Siemreap
+      fonts:
+        - asset: font/Battambang-Regular.ttf
+          weight: 700
+    - family: Righteous
+      fonts:
+        - asset: font/Righteous-Regular.ttf
+          weight: 700
+    - family: CourierPrime
+      fonts:
+        - asset: font/CourierPrime-Bold.ttf
+          weight: 700
+    - family: Pochaevsk
+      fonts:
+        - asset: font/Pochaevsk-Regular.ttf
+          weight: 700
+    - family: Lobster
+      fonts:
+        - asset: font/Lobster-Regular.ttf
+          weight: 700
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
