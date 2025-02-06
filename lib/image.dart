@@ -265,7 +265,7 @@ List<Map<String, String>> items6 = [
     "text4": "_About US Screen",
   },
   {
-    "image": "images/soeu.JPG",
+    "image": "images/sovannareach.png",
     "name": "Noun Sovannareach",
     "id": "ID: B20230521",
     "text1": "_Main Screen",
@@ -274,7 +274,7 @@ List<Map<String, String>> items6 = [
     "text4": "_About US Screen",
   },
   {
-    "image": "images/sovannareach.png",
+    "image": "images/soeu.JPG",
     "name": "Vorn Soeu",
     "id": "ID: B20230521",
     "text1": "_Main Screen",

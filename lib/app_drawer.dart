@@ -22,7 +22,7 @@ class AppDrawer extends StatelessWidget {
                   height: 55.0,
                   decoration: BoxDecoration(
                     image: const DecorationImage(
-                      image: AssetImage('images/soeu.JPG'),
+                      image: AssetImage('images/chhorng.png'),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(50.0)),
@@ -32,33 +32,37 @@ class AppDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 15.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'សួស្ដី Vorn Soeu!',
-                        style: TextStyle(
-                          fontFamily: "Siemreap",
-                          color: Colors.white,
-                          fontSize: 23,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 3.0, bottom: 1.0),
-                        child: Text(
-                          'មើលប្រូហ្វាល>',
+                Expanded(
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 15.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'សួស្ដី Eng Mengchhorng!',
                           style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 15.0,
                             fontFamily: "Siemreap",
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3.0, bottom: 1.0),
+                          child: Text(
+                            'មើលប្រូហ្វាល>',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 15.0,
+                              fontFamily: "Siemreap",
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -169,7 +173,7 @@ class AppDrawer extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      "images/soeu.JPG",
+                      "images/Cambodia.png",
                       width: 20,
                       height: 20,
                     ),

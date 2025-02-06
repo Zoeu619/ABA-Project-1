@@ -101,7 +101,6 @@ flutter:
     - images/waterandwash.png
     - images/bank.png
     - images/wifi.png
-    - Svg_Image/save.svg
     - images/khQr.png
     - images/dollar_QR.png
     - images/khmer_QR.png
@@ -132,7 +131,7 @@ flutter:
     - images/chhorng.png
     - images/malorn.png
     - images/sovannareach.png
-    # - images/
+    - images/Cambodia.png
     # - images/
     # - images/
 
