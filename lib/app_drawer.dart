@@ -22,7 +22,7 @@ class AppDrawer extends StatelessWidget {
                   height: 55.0,
                   decoration: BoxDecoration(
                     image: const DecorationImage(
-                      image: AssetImage('images/chhorng.png'),
+                      image: AssetImage('images/soeu.JPG'),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(50.0)),
