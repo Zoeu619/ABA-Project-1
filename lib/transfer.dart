@@ -97,7 +97,7 @@ class _TransferState extends State<Transfer> {
 Widget _buildBody(BuildContext context) {
   return Container(
     height: MediaQuery.of(context).size.height,
-    padding: const EdgeInsets.only(left: 16, right: 16),
+    padding: const EdgeInsets.only(top: 10),
     color: const Color(0xFF101C28),
     child: const AllService(),
   );

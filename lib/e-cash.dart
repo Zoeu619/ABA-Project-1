@@ -191,6 +191,7 @@ class _MyDropdownState extends State<MyDropdown> {
         ),
         const SizedBox(height: 20),
         TextField(
+          style: TextStyle(color: Colors.white, fontFamily: "Siemreap"),
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(

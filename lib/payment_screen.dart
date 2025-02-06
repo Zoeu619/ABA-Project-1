@@ -304,76 +304,74 @@ class AllService extends StatelessWidget {
       itemBuilder: (context, index) {
         return Stack(
           children: [
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                height: 80,
-                margin: const EdgeInsets.only(left: 16.0, right: 16.0, top: 10),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF212D39),
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 4,
-                      offset: Offset(2, 2),
+            Container(
+              width: double.infinity,
+              height: 80,
+              margin: const EdgeInsets.only(left: 16.0, right: 16.0, top: 10),
+              decoration: BoxDecoration(
+                color: const Color(0xFF212D39),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 4,
+                    offset: Offset(2, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      width: 45,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1.5, color: Colors.white),
+                        image: DecorationImage(
+                          image: AssetImage(items1[index]["image"]!),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
                     ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
+                  ),
+                  Expanded(
+                    child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 45,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1.5, color: Colors.white),
-                          image: DecorationImage(
-                            image: AssetImage(items1[index]["image"]!),
-                            fit: BoxFit.cover,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            items1[index]["title"]!,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontFamily: "Siemreap",
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          borderRadius: BorderRadius.circular(100),
-                        ),
+                          const SizedBox(height: 5),
+                          Text(
+                            items1[index]["text"]!,
+                            style: TextStyle(
+                              color: Colors.grey[300],
+                              fontSize: 14,
+                              fontFamily: "Siemreap",
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              items1[index]["title"]!,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: "Siemreap",
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            const SizedBox(height: 5),
-                            Text(
-                              items1[index]["text"]!,
-                              style: TextStyle(
-                                color: Colors.grey[300],
-                                fontSize: 14,
-                                fontFamily: "Siemreap",
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],

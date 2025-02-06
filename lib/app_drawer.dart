@@ -32,22 +32,22 @@ class AppDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                const Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'សួស្ដី Eng Mengchhorng!',
+                          'សួស្ដី N Sovannareach!',
                           style: TextStyle(
                             fontFamily: "Siemreap",
                             color: Colors.white,
-                            fontSize: 22,
+                            fontSize: 20,
                             fontWeight: FontWeight.w800,
                           ),
-                          maxLines: 2,
+                          maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),
                         Padding(
@@ -56,7 +56,7 @@ class AppDrawer extends StatelessWidget {
                             'មើលប្រូហ្វាល>',
                             style: TextStyle(
                               color: Colors.white70,
-                              fontSize: 15.0,
+                              fontSize: 13.0,
                               fontFamily: "Siemreap",
                             ),
                           ),

@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: const Color(0xff255b81),
       drawer: const Drawer(
+        width: 350,
         // child: DrawerWidget(),
         child: AppDrawer(),
       ),
@@ -91,24 +92,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: Container(
-                width: 25.0,
-                height: 25.0,
+                width: 27.0,
+                height: 27.0,
                 decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white,
-                      offset: Offset.zero,
-                      // blurRadius: 0.0,
-                      spreadRadius: 2.0,
-                      blurStyle: BlurStyle.normal,
-                    ),
-                  ],
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: Colors.white,
+                  //     offset: Offset.zero,
+                  //     // blurRadius: 0.0,
+                  //     spreadRadius: 2.0,
+                  //     blurStyle: BlurStyle.normal,
+                  //   ),
+                  // ],
                   color: Color(0xff7c94b6),
                   image: DecorationImage(
-                    image: AssetImage('images/khQr.png'),
+                    image: AssetImage('images/khQr 1.png'),
                     fit: BoxFit.cover,
                   ),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderRadius: BorderRadius.all(Radius.circular(7.0)),
                   // border: Border.all(
                   //   color: Colors.white,
                   //   width: 2.0,
@@ -158,11 +159,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       SizedBox(height: 10),
-                      Text(
-                        'ចូលប្រើគំរូរបស់អ្នកត្រង់នេះ ដើម្បីផ្ទេរប្រាក់បានលឿន',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "Siemreap",
+                      Padding(
+                        padding: EdgeInsets.only(right: 140.0),
+                        child: Text(
+                          'ចូលប្រើគំរូរបស់អ្នកត្រង់នេះ ដើម្បីផ្ទេរប្រាក់បានលឿន',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Siemreap",
+                          ),
                         ),
                       ),
                     ],
@@ -212,11 +216,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       SizedBox(height: 10),
-                      Text(
-                        'បង្កើតគំរូដើម្បីងាយស្រួលនិងរហ័សក្នុងការទូទាត់ប្រាក់',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "Siemreap",
+                      Padding(
+                        padding: EdgeInsets.only(right: 140.0),
+                        child: Text(
+                          'បង្កើតគំរូដើម្បីងាយស្រួលនិងរហ័សក្នុងការទូទាត់ប្រាក់',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Siemreap",
+                          ),
                         ),
                       ),
                     ],
